@@ -1,4 +1,15 @@
-validator-webui
-===============
+# OParl Validator GUI
 
-Web frontend for the OParl validator
+## Installation
+
+### Dev System
+
+```bash
+python3 bootstrap.py
+bin/buildout
+bin/flask
+```
+
+### Prod System
+
+TODO
