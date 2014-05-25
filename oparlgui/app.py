@@ -22,4 +22,4 @@ def validate_from_url():
     return 'not implemented yet'
 
 def run():
-    app.run(debug=True) # TODO: remove debugging
+    app.run(port=5001, debug=True) # TODO: remove debugging

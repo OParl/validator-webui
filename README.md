@@ -10,6 +10,8 @@ bin/buildout
 bin/flask
 ```
 
+You should now be able to connect to localhost:5001 or 127.0.0.1:5001.
+
 ### Prod System
 
 TODO
