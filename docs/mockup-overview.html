@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="de">
 <head>
     <meta charset="utf-8">
@@ -16,91 +15,131 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </head>
-
 <body>
     <div class="container">
         <div class="row">
             <div class="col-md-offset-1 col-md-6">
-                <h3>Aktuelle OParl-Instanzen</h3>
+                <h1>OParl</h1>
+                <h3>OParl-Instanzen</h3>
+                <p>
+                    Um den Bürgern und den API-Benutzern einen Überblick über die verfügbaren OParl-Systeme zu liefern testen wir ständig ob OParl-Systeme nach der <a href="#">OParl-Spezifikation</a> valide sind und welche optionalen Eigenschaften sie unterstützen.
+                </p>
 
                 <table class="table table-condensed table-bordered">
                     <thead>
                         <tr>
                             <th>Name</th>
-
                             <th>URL</th>
-
+                            <th><nobr>Score <a href="#" id="score">?</a></nobr></th>
                             <th>letzter Testlauf</th>
-
-                            <th>Empfohlene Eigenschaften</th>
-
-                            <th>Tagesordnungspunkte</th>
-
-                            <th>Beratungsfolgen</th>
-
+                            <th>Empfohlene Eigenschaften <a href="#" id="optional">?</a></th>
+                            <th>Tagesordnungspunkte <a href="#" id="top">?</a></th>
+                            <th>Beratungsfolgen <a href="#" id="bfol">?</a></th>
                             <th>Ältester Datensatz</th>
-
                             <th></th>
                         </tr>
                     </thead>
 
                     <tr>
-                        <td>Beispielstadt 1</td>
-
-                        <td>http://ris.beispielstadt1/oparl/</td>
-
-                        <td>23.06.2014</td>
-
-                        <td class="warning">19 / 30</td>
-
-                        <td class="success">ja (80%)</td>
-
-                        <td class="warning">nein</td>
-
-                        <td>23.02.2005</td>
-
-                        <td><a href="#">Details</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>Beispielstadt 2</td>
-
-                        <td>http://oparl.ris.beispielstadt2.de</td>
-
+                        <td><nobr>Beispielstadt 2</nobr></td>
+                        <td><a href="#">http://oparl.ris.beispielstadt2.de</a></td>
+                        <td class="success">91</td>
                         <td>21.06.2014</td>
-
-                        <td class="success">28 / 30</td>
-
+                        <td class="success" id="optional93">93%</small></td>
                         <td class="success">ja (92%)</td>
-
                         <td class="success">ja</td>
-
                         <td>09.08.2002</td>
+                        <td><a href="#">Details</a></td>
+                    </tr>
 
+                    <tr>
+                        <td>Beispielstadt 1</td>
+                        <td><a href="#">http://ris.beispielstadt1/oparl/</a></td>
+                        <td class="warning">60</td>
+                        <td>23.06.2014</td>
+                        <td class="warning" id="optional63">63%</td>
+                        <td class="success">ja (80%)</td>
+                        <td class="warning">nein</td>
+                        <td>23.02.2005</td>
+                        <td><a href="#">Details</a></td>
+                    </tr>
+
+                   <tr>
+                        <td>Beispielstadt 42</td>
+                        <td><a href="#">http://example.org</a></td>
+                        <td class="danger">0 <small>(<a href="#" id="badScoreWhy">why?</a>)</small></td>
+                        <td>today</td>
+                        <td class="danger">0</td>
+                        <td class="danger">0</td>
+                        <td class="warning">nein</td>
+                        <td>23.08.2010</td>
                         <td><a href="#">Details</a></td>
                     </tr>
 
                     <tr>
                         <td>...</td>
-
                         <td>...</td>
-
                         <td>...</td>
-
                         <td>...</td>
-
                         <td>...</td>
-
                         <td>...</td>
-
                         <td>...</td>
-
+                        <td>...</td>
                         <td>...</td>
                     </tr>
                 </table>
+                <p>
+                    Ihr System ist nicht dabei? <a href="#">Hier</a> anmelden!
+                </p>
+                <p>
+                    Erläuterungen zu den einzelnen Werten können sie <a href="#">hier</a> finden.
+                </p>
             </div>
         </div>
     </div>
+    <script>
+    $(function(){
+        $("#score").popover({
+            placement: "bottom",
+            trigger: "hover",
+            content: "Die Gesamtscore berechnet sich nach: blah"
+        });
+        $("#optional").popover({
+            placement: "bottom",
+            trigger: "hover",
+            content: "Empfohlene Eigenschaften sind nicht-zwingende Eigenschaften, welche in der OParl Spezifikation jedoch als empfohlen gelten. Sie helfen Benutzern ..."
+        });
+        $("#top").popover({
+            placement: "bottom",
+            trigger: "hover",
+            content: "Jedes Meeting sollte mindestens N TOPs aufweisen"
+        });
+        $("#bfol").popover({
+            placement: "bottom",
+            trigger: "hover",
+            content: "tooltip"
+        });
+        $("#badScoreWhy").popover({
+            placement: "bottom",
+            trigger: "hover",
+            content: "This OParl instance is invalid. See the details for further information"
+        });
+        $("#optional93").popover({
+            placement: "bottom",
+            trigger: "hover",
+            content: "28 / 30 Eigenschaften",
+            container: "body"
+        });
+        $("#optional63").popover({
+            placement: "bottom",
+            trigger: "hover",
+            content: "19 / 30 Eigenschaften",
+            container: "body"
+        });
+    });
+    </script>
 </body>
 </html>
