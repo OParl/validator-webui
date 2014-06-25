@@ -28,74 +28,81 @@
                     Um den Bürgern und den API-Benutzern einen Überblick über die verfügbaren OParl-Systeme zu liefern testen wir ständig ob OParl-Systeme nach der <a href="#">OParl-Spezifikation</a> valide sind und welche optionalen Eigenschaften sie unterstützen.
                 </p>
 
-                <table class="table table-condensed table-bordered">
-                    <thead>
+                <div class="table-responsive">
+                    <table class="table table-condensed table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name <span class="glyphicon glyphicon-sort"></span></th>
+                                <th>URL</th>
+                                <th><nobr>Score <a href="#" id="score">?</a></nobr><span class="glyphicon glyphicon-sort"></th>
+                                <th>letzter Testlauf</th>
+                                <th>Empfohlene Eigenschaften <a href="#" id="optional">?</a></th>
+                                <th>TOPs <a href="#" id="top">?</a></th>
+                                <th>Beratungsfolgen <a href="#" id="bfol">?</a></th>
+                                <th>Ältester Datensatz</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
                         <tr>
-                            <th>Name</th>
-                            <th>URL</th>
-                            <th><nobr>Score <a href="#" id="score">?</a></nobr></th>
-                            <th>letzter Testlauf</th>
-                            <th>Empfohlene Eigenschaften <a href="#" id="optional">?</a></th>
-                            <th>Tagesordnungspunkte <a href="#" id="top">?</a></th>
-                            <th>Beratungsfolgen <a href="#" id="bfol">?</a></th>
-                            <th>Ältester Datensatz</th>
-                            <th></th>
+                            <td><nobr>Beispielstadt 2</nobr></td>
+                            <td><a href="#">http://oparl.ris.beispielstadt2.de</a></td>
+                            <td class="success">91</td>
+                            <td>21.06.2014</td>
+                            <td class="success" id="optional93">93%</small></td>
+                            <td class="success">ja (92%)</td>
+                            <td class="success">ja</td>
+                            <td>09.08.2002</td>
+                            <td><a href="#">Details</a></td>
                         </tr>
-                    </thead>
 
-                    <tr>
-                        <td><nobr>Beispielstadt 2</nobr></td>
-                        <td><a href="#">http://oparl.ris.beispielstadt2.de</a></td>
-                        <td class="success">91</td>
-                        <td>21.06.2014</td>
-                        <td class="success" id="optional93">93%</small></td>
-                        <td class="success">ja (92%)</td>
-                        <td class="success">ja</td>
-                        <td>09.08.2002</td>
-                        <td><a href="#">Details</a></td>
-                    </tr>
+                        <tr>
+                            <td>Beispielstadt 1</td>
+                            <td><a href="#">http://ris.beispielstadt1/oparl/</a></td>
+                            <td class="warning">60</td>
+                            <td>23.06.2014</td>
+                            <td class="warning" id="optional63">63%</td>
+                            <td class="success">ja (80%)</td>
+                            <td class="warning">nein</td>
+                            <td>23.02.2005</td>
+                            <td><a href="#">Details</a></td>
+                        </tr>
 
-                    <tr>
-                        <td>Beispielstadt 1</td>
-                        <td><a href="#">http://ris.beispielstadt1/oparl/</a></td>
-                        <td class="warning">60</td>
-                        <td>23.06.2014</td>
-                        <td class="warning" id="optional63">63%</td>
-                        <td class="success">ja (80%)</td>
-                        <td class="warning">nein</td>
-                        <td>23.02.2005</td>
-                        <td><a href="#">Details</a></td>
-                    </tr>
+                        <tr>
+                            <td colspan="9"><hr></td>
+                        </tr>
 
-                   <tr>
-                        <td>Beispielstadt 42</td>
-                        <td><a href="#">http://example.org</a></td>
-                        <td class="danger">0 <small>(<a href="#" id="badScoreWhy">why?</a>)</small></td>
-                        <td>today</td>
-                        <td class="danger">0</td>
-                        <td class="danger">0</td>
-                        <td class="warning">nein</td>
-                        <td>23.08.2010</td>
-                        <td><a href="#">Details</a></td>
-                    </tr>
+                        <tr>
+                            <td>Beispielstadt 42</td>
+                            <td><a href="#">http://example.org</a></td>
+                            <td class="danger">0 <small>(<a href="#" id="badScoreWhy">why?</a>)</small></td>
+                            <td>today</td>
+                            <td class="danger">0</td>
+                            <td class="danger">0</td>
+                            <td class="warning">nein</td>
+                            <td>23.08.2010</td>
+                            <td><a href="#">Details</a></td>
+                        </tr>
 
-                    <tr>
-                        <td>...</td>
-                        <td>...</td>
-                        <td>...</td>
-                        <td>...</td>
-                        <td>...</td>
-                        <td>...</td>
-                        <td>...</td>
-                        <td>...</td>
-                        <td>...</td>
-                    </tr>
-                </table>
-                <p>
-                    Ihr System ist nicht dabei? <a href="#">Hier</a> anmelden!
-                </p>
+                        <tr>
+                            <td colspan="9">...</td>
+                        </tr>
+                    </table>
+
+                    <ul class="pagination">
+                        <li><a href="#">&laquo;</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </div>
                 <p>
                     Erläuterungen zu den einzelnen Werten können sie <a href="#">hier</a> finden.
+                </p>
+                <br>
+                <p>
+                    <h4>Ihr System ist nicht dabei?</h4>
+                    <button type="button" class="btn btn-primary btn-lg">Hier anmelden!</button>
                 </p>
             </div>
         </div>
@@ -115,7 +122,7 @@
         $("#top").popover({
             placement: "bottom",
             trigger: "hover",
-            content: "Jedes Meeting sollte mindestens N TOPs aufweisen"
+            content: "Jedes Meeting sollte mindestens N Tagesordnungspunkte (TOPs) aufweisen"
         });
         $("#bfol").popover({
             placement: "bottom",
